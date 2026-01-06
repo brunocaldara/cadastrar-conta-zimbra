@@ -97,6 +97,10 @@ def main():
                 page.locator(
                     "#zdlgv__NEW_ACCT_zimbraPasswordMaxAge_2").fill("90")
                 page.wait_for_timeout(TIMEOUT)
+                # Forçar mudar o valor da idade maxima da senha
+                page.locator(
+                    "#zdlgv__NEW_ACCT_zimbraPasswordEnforceHistory_2").click()
+                page.wait_for_timeout(TIMEOUT)
                 page.get_by_role("button", name="Concluir").click()
                 page.wait_for_timeout(TIMEOUT)
                 print(f"Conta {funcional_formatada} cadastrada com sucesso")
